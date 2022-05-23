@@ -2,10 +2,10 @@
     <div class="container">
         <form class="form" action="">
             <div class="row">
-                <div class="col-2">
+                <div class="col-3">
                     <label for="username">Nombre y apellido: </label>
                 </div>
-                <div class="col-10">
+                <div class="col-9">
                     <input type="text" id="username" placeholder="Tu nombre y apellido" class="form-control" @keyup="validateNombre" v-model="usuario.nombre"/>
                 </div>
             </div>
@@ -13,10 +13,10 @@
                 <p class="errorForm">{{ validNombre }}</p>
             </div>
             <div class="row">
-                <div class="col-2">
+                <div class="col-3">
                     <label for="username">Mail: </label>
                 </div>
-                <div class="col-10">
+                <div class="col-9">
                     <input type="text" id="email" placeholder="Tu email" class="form-control" @keyup="validateEmail" v-model="usuario.email"/>
                 </div>
             </div>
@@ -24,10 +24,10 @@
                 <p class="errorForm">{{ validMail }}</p>
             </div>
             <div class="row">
-                <div class="col-2">
+                <div class="col-3">
                     <label for="username">Edad: </label>
                 </div>
-                <div class="col-10">
+                <div class="col-9">
                     <input type="number" id="edad" placeholder="Tu edad" class="form-control" @keyup="validateEdad" v-model="usuario.edad"/>
                 </div>
             </div>
@@ -35,10 +35,10 @@
                 <p class="errorForm">{{ validEdad }}</p>
             </div>
             <div class="row">
-                <div class="col-2">
+                <div class="col-3">
                     <label for="password">Contraseña: </label>
                 </div>
-                <div class="col-10">
+                <div class="col-9">
                     <input type="password" id="password" placeholder="Tu contraseña" class="form-control" @keyup="validatePassword" v-model="usuario.password"/>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                 <p class="errorForm">{{ validPassword }}</p>
             </div>
             <div class="row">
-                <input type="button" value="Agregar" @click="agregarUsuario"/>
+                <input type="button" class="btn btn-agregar" value="Agregar" @click="agregarUsuario"/>
             </div>
         </form>
     </div>
@@ -127,21 +127,30 @@ export default {
 </script>
 
 <style scoped>
-    
+
     input{
         width: 100%;
     }
 
-    .col-2{
+    .col-3{
         text-align: right;
     }
+
     .form{
-        box-shadow: 2px;
-        border: 5px;
+        border: 1px solid #88B6CB;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
+
     .errorForm{
         color: red;
         font-size: small;
+    }
+
+    .btn-agregar{
+        background-color: #88B6CB;
     }
 
 </style>

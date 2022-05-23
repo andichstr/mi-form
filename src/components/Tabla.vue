@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container" v-if="usuarios.length != 0">
         <table class="table">
             <thead>
                 <tr>
@@ -33,5 +33,15 @@ export default {
 </script>
 
 <style>
+    .table{
+        font-weight: bold;
+    }
 
+    .table > thead{
+        background-color: #CB88B6;
+    }
+
+    .table > tbody{
+        background-color: #B6CB88;
+    }
 </style>
