@@ -104,7 +104,7 @@ export default {
             }
         },
         validateEdad(){
-            if (this.usuario.edad > 18 && this.usuario.edad < 100){
+            if (this.usuario.edad >= 18 && this.usuario.edad <= 100){
                 this.validEdad = "";
                 return true;
             } else {
