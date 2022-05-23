@@ -1,28 +1,39 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Formulario @agregar-usuario-tabla="agregarUsuarioTabla"/>
+    <br><hr>
+    <Tabla :usuarios="usuarios"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Formulario from './components/Formulario.vue'
+import Tabla from './components/Tabla.vue'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+    name: 'App',
+    components: {
+        Formulario,
+        Tabla
+    },
+    data() {
+        return {
+            usuarios: []
+        }
+    },
+    methods: {
+        agregarUsuarioTabla(usuario) {
+            console.log(usuario);
+            const nuevoUsuario = {...usuario};
+            this.usuarios.push(nuevoUsuario);
+        }
+    }
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
   margin-top: 60px;
 }
 </style>
